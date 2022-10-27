@@ -1,20 +1,28 @@
+:root {
+  --style-white: hsl(0, 0%, 100%);
+  --style-light-grey: hsl(217, 12%, 63%);
+  --style-med-grey: rgba(108, 108, 108);
+  --style-dark-blue: hsl(213, 19%, 18%);
+  --style-very-dark-blue: hsl(216, 12%, 8%);
+  --style-orange: #FC7310;
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: var(--style-very-dark-blue);
+  color: var(--style-white);
+  font-family: 'Overpass', sans-serif;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -24,15 +32,173 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+h1 {
+  font-weight: 700;
+  font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+h3 {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--style-med-grey);
+}
+
+.star {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  border-radius: 50%;
+
+}
+
+.star img {
+  background-color: rgba(108, 108, 108, 0.2);
+  border-radius: 50%;
+  height: 24px;
+  /* -webkit-filter: grayscale(1); */
+}
+
+.thankyou {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.thankyou img {
+  animation: moveUpDown 2s ease-in-out infinite;
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateY(0px);
   }
-  to {
-    transform: rotate(360deg);
+
+  50% {
+    transform: translateY(-10px);
   }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.thankyou * {
+  margin-bottom: 20px;
+}
+
+.thankyou h1 {
+  margin: 0;
+}
+
+.thankyou .appreciation {
+  margin: 0;
+}
+
+.final-rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: var(--style-orange);
+  background-color: rgba(108, 108, 108, 0.2);
+  border-radius: 20px;
+  min-width: 60%;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+}
+
+
+.card {
+  background-color: var(--style-dark-blue);
+  border-radius: 40px;
+  padding: 20px;
+  margin: 20px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  text-align: left;
+}
+
+.card-header * {
+  padding: 10px;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.card-body * {
+  margin: 5px 0 5px;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 95%;
+  padding-bottom: 10px;
+}
+
+.rating button {
+  background-color: rgba(108, 108, 108, 0.2);
+  color: var(--style-light-grey);
+  border-radius: 50%;
+  border-color: var(--style-white);
+  border: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.rating button img {
+  filter: grayscale(1);
+}
+
+.rating button:hover {
+  background-color: #f27720;
+  color: var(--style-white);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  transform: scale(1.10);
+}
+
+.rating .button_active {
+  background-color: var(--style-med-grey);
+  color: var(--style-white);
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.rating .button_active img {
+  /* restore the original image color from grayscale */
+  filter: grayscale(0);
+}
+
+.SubmitButton {
+  background-color: var(--style-orange);
+  color: var(--style-white);
+  border-radius: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: 40px;
+  min-width: 95%;
+  font: 700 16px 'Overpass', sans-serif;
+  border: 0;
+  transition: all 0.2s cubic-bezier(0.075, 0.82, 0.165, 1);
+  /* box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3); */
+}
+
+.SubmitButton:hover {
+  background-color: var(--style-white);
+  color: var(--style-orange);
+  /* slightly get larger */
+  transform: scale(1.05);
 }
